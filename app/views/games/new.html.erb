@@ -1,0 +1,12 @@
+<h1>New game</h1>
+<h2>Fais un mot en anglais avec les lettre suivants</h2>
+<p><%= @array_of_ten_letters_random %></p>
+<p><%= @array_of_ten_letters_random.join(" ") %></p>
+<form action="/score">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %> <!-- pour être sûr que celui qui poste le form est dans la bonne session -->
+  <%= hidden_field_tag :letters, @array_of_ten_letters_random %> <!-- enregistre moi @array_of_ten_letters_random dans un param qui s'appelle letters pour que je puisse le récupérer dans score -->
+  <input type="text" name="mot" placeholder="Entre un mot">
+  <input type="submit">
+</form>
+
+
