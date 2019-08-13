@@ -32,5 +32,6 @@ class GamesController < ApplicationController
     @result_API_longueur_mot = user["length"]
 
     @result = @result & @result_API_exist
+    raise
   end
 end
